@@ -11,6 +11,7 @@ Use this framework to get organized and running quickly, so that you can focus y
 - It's documented, probably moreso than what you have already.
 - It's fast! [INSERT PERF METRIC HERE]
 - Simple way to manage configurations across different environments.
+- A pre-built postman collection you can test with!
 
 ## Quickstart
 
