@@ -19,8 +19,7 @@ In this repository, there is a folder for each pattern.
 
 Inside that folder, there is a:
 - `readme.md` - The documentation for that pattern; what it is, how to use it, etc
-- `bare-bone-implementation/` - A working example of the pattern stripped down to it's bare bones.
-- `example-implementation/` - A working example of the pattern, with additions that represent some typical use cases.
+- `examples/` - Contains a bare-bones implementation of the pattern, and a more in-depth example implementation.
 
 ----
 
