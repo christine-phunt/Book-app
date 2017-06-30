@@ -4,7 +4,7 @@ So what's the point of EV Patterns?
 
 ### Basics
 
-These are examples of common problems solved by software. You might have to build one of these one day, if so, you can use this as a starting block. You can use what you find here, or ignore all of it, that;s on you. These at least, work and will get hte job done.
+These are examples of common problems solved by software. You might have to build one of these one day, if so, you can use this as a starting block. You can use what you find here, or ignore all of it, that's on you. These at least, work and will get the job done.
 
 These patterns work and will get the job done. Use them as a foundation to build on.
 
@@ -16,7 +16,7 @@ These can be the basic building blocks that you use in your project to get going
 
 Look through these folders to see some common patterns to try and use.
 
-Nor sure where to start? Try running the NodeJS-API-Server pattern.
+Nor sure where to start? Try running the [NodeJS-API-Server](./nodejs-api-server) pattern.
 
 ### FAQ
 
@@ -38,7 +38,7 @@ TODO - add performance measures....more to come
 In this repository, there is a folder for each pattern.
 
 Inside that folder, there is a:
-- `readme.md` - The documentation for that pattern; what it is, how to use it, etc
+- `README.md` - The documentation for that pattern; what it is, how to use it, etc.
 - `examples/` - Contains a bare-bones implementation of the pattern, and a more in-depth example implementation.
 
 ### Contributing
@@ -50,7 +50,6 @@ TODO - add a guide here on how to get a contribution accepted get accepted.
 ### TODO List
 
 - Finish a nodejs-api-server pattern
-    - bare-bones example
     - to-do-app example
         - unit tests
         - integration tests
@@ -60,3 +59,5 @@ TODO - add a guide here on how to get a contribution accepted get accepted.
         - What tools is this based on? expressjs/mvc
         - how to use? guide
         - diagram
+
+- Later, include a barebones example (that can be copied)
