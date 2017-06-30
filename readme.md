@@ -4,13 +4,13 @@ So what's the point of EV Patterns?
 
 ### Basics
 
-These are examples of common problems solved by software. You might have to build one of these one day, if so, you can use this as a starting block. You can use what you find here, or ignore all of it, that's on you. These at least, work and will get the job done.
+These are examples of common problems solved by software. You might have to build one of these one day, if so, you can use this as a starting block. You can use what you find here, or ignore all of it, that's on you.
 
 These patterns work and will get the job done. Use them as a foundation to build on.
 
 These can be the basic building blocks that you use in your project to get going in the right direction.
 
-*KISS - Keep it simple _silly_*: Don't make anything more complicated than it needs to be. These patterns are dead simple - they work.
+**KISS - Keep it simple _silly_**: Don't make anything more complicated than it needs to be. These patterns are dead simple - and they just work.
 
 ### Quickstart
 
