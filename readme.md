@@ -47,12 +47,6 @@ Inside that folder, there is a:
 - `README.md` - The documentation for that pattern; what it is, how to use it, etc.
 - `examples/` - Contains a bare-bones implementation of the pattern, and a more in-depth example implementation.
 
-### Contributing
-
-Submissions are accepted via pull requests only.
-
-TODO - add a guide here on how to get a contribution accepted get accepted.
-
 ### TODO List
 
 - Finish a nodejs-api-server pattern
