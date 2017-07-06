@@ -55,6 +55,8 @@ TODO - add a guide here on how to get a contribution accepted get accepted.
         - integration tests
         - performance test
             - how long to respond to a 2xx,3xx,4xx,5xx,etc?
+        - hook up mysql and docker so it can run with 1 command
+            - Simple docker setup, put in a link for local dev using docker & pm2/inotify
     - documentation
         - What tools is this based on? expressjs/mvc
         - how to use? guide

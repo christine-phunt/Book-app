@@ -38,8 +38,9 @@ This should be a diagram of the middleware/moving parts of the API server
 
 ## Resources
 
-- ExpressJS Middleware page
-- ExpressJS docs
+- [ExpressJS documentation](https://expressjs.com/)
+- [Using ExpressJS middleware](https://expressjs.com/en/guide/using-middleware.html)
+- [Error handling in ExpressJS](https://expressjs.com/en/guide/error-handling.html)
 
 ## Further reading
 
