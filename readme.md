@@ -2,6 +2,12 @@
 
 So what's the point of EV Patterns?
 
+## A note to contributors
+
+Contributions are not being accepted just yet, but do not be disheartened. If you have an idea of how to make this better, please open an issue [here](https://github.com/ElephantVentures/patterns/issues) to describe your change and I'll do my best to align it to the foundational roadmap.
+
+Contributions will be welcome and accepted soon, once the foundation of this repository, and the vision of this effort is solidifed.
+
 ### Basics
 
 These are examples of common problems solved by software. You might have to build one of these one day, if so, you can use this as a starting block. You can use what you find here, or ignore all of it, that's on you.
