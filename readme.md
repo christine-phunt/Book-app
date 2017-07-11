@@ -1,3 +1,5 @@
+# this is still a work in progress - and by no means a decree of law
+
 ## The Standard Pattern Libary
 
 So what's the point of EV Patterns?
