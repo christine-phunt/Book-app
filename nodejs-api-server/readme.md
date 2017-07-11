@@ -15,8 +15,8 @@ Use this framework to get organized and running quickly, so that you can focus y
 
 ## Quickstart
 
-1. Copy codebase from the `src/` folder
-2. Run `npm start`
+1. Change directory into the [`examples/to-do-api-example/`](https://github.com/ElephantVentures/patterns/tree/master/nodejs-api-server/examples/to-do-api-example) folder
+2. Execute `node main.js`
 
 ## Description
 
