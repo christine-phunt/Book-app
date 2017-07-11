@@ -24,7 +24,7 @@ These can be the basic building blocks that you use in your project to get going
 
 Look through these folders to see some common patterns to try and use.
 
-Nor sure where to start? Try running the [NodeJS-API-Server](./nodejs-api-server) pattern.
+Not sure where to start? Try running the [NodeJS-API-Server](./nodejs-api-server) pattern.
 
 ### FAQ
 
