@@ -26,7 +26,11 @@ This should be a deeper description of the high level components
 
 ## Diagram
 
-This should be a diagram of the middleware/moving parts of the API server
+![](http://i.imgur.com/ZORthDF.png)
+
+> [imgur link](http://imgur.com/a/IWxuU)
+
+> [draw.io xml](https://github.com/ElephantVentures/patterns/wiki/Draw.io-xml-for-nodejs-api-server-pattern-diagram)
 
 ## How do I ..?
 
