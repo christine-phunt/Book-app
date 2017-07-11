@@ -47,4 +47,4 @@ In this repository, there is a folder for each pattern.
 
 Inside that folder, there is a:
 - `README.md` - The documentation for that pattern; what it is, how to use it, etc.
-- `examples/` - Contains a bare-bones implementation of the pattern, and a more in-depth example implementation.
+- `examples/` - Contains examples of implementation.
