@@ -15,8 +15,9 @@ Use this framework to get organized and running quickly, so that you can focus y
 
 ## Quickstart
 
-1. Change directory into the [`examples/to-do-api-example/`](https://github.com/ElephantVentures/patterns/tree/master/nodejs-api-server/examples/to-do-api-example) folder
-2. Execute `node main.js`
+1. Change directory into the [`examples/to-do-api-example/`](https://github.com/ElephantVentures/patterns/tree/master/nodejs-api-server/examples/to-do-api-example) folder.
+2. Execute `npm install` to install dependencies.
+3. Execute `node main.js` to start the server.
 
 ## Description
 
