@@ -43,8 +43,13 @@ TODO - add performance measures....more to come
 
 ### How patterns are structured
 
-In this repository, there is a folder for each pattern.
-
-Inside that folder, there is a:
-- `README.md` - The documentation for that pattern; what it is, how to use it, etc.
+In this repository, there is a folder for each pattern. Inside that folder, there is a:
+- `readme.md` - The documentation for that pattern; what it is, how to use it, etc.
 - `examples/` - Contains examples of implementation.
+
+```
+patterns/
+    +- nodejs-api-pattern/
+        +- examples/
+        +- readme.md
+```
