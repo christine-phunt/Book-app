@@ -1,4 +1,4 @@
-# this is still a work in progress - and by no means a decree of law
+# this is still a work in progress
 
 ## The Standard Pattern Libary
 
