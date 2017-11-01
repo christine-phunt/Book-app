@@ -1,0 +1,18 @@
+version: '3'
+services:
+
+    # MongoDB, our database
+    mongodb:
+        image: mongo:3.0
+        container_name: mongodb
+
+    restore-db:
+        build: ./restore-db
+        container_name: restore-db
+        depends_on:
+            - mongodb
+        environment:
+            - DB_HOST=mongodb # this is the hostname that we will check is ready
+            - DB_PORT=27017 # this is the port to access the database host on
+        volumes:
+            - ./restore-db:/restore-db
