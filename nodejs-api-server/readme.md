@@ -15,9 +15,11 @@ Use this framework to get organized and running quickly, so that you can focus y
 
 ## Quickstart
 
-1. Change directory into the [`examples/to-do-api-example/`](https://github.com/ElephantVentures/patterns/tree/master/nodejs-api-server/examples/to-do-api-example) folder.
-2. Execute `npm install` to install dependencies.
-3. Execute `node main.js` to start the server.
+1. Install the dependencies with `npm install`.
+2. Run `npm start` to start the server.
+3. Optinally build and run this as a docker container
+- `docker build -t nodejs-api .`
+- `docker run -it --rm --name nodejs-api -p 9000:9000 nodejs-api`
 
 ## Description
 
@@ -50,4 +52,3 @@ This should be a deeper description of the high level components
 ## Further reading
 
 - Check out how to use this api server as an upstream source for an NginX reverse proxy
-- Check out how to run this in the context of Docker

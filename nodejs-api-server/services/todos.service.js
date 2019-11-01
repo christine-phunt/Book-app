@@ -1,5 +1,5 @@
 /**
- * This is the todos model.
+ * This is the todos service.
  * This guy is responsible for all of the business logic related to a To Do entity.
  *
  *

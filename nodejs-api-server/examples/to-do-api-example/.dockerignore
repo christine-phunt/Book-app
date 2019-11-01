@@ -1,2 +1,0 @@
-# Ignore these since the image installs it and OSX and UBUNTU builds the binaries differently
-node_modules

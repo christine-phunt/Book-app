@@ -2,12 +2,21 @@
  * This is the entrypoint to the API.
  */
 
-const express = require('express');
 const os = require('os');
+
+const express = require('express');
+
 const databaseConnection = require('./databaseConnection.js');
 
+const ApplicationService = require('./services/application.service.js');
+const ApplicationController = require('./controllers/application.controller.js');
+const ApplicationRouter = require('./routers/application.router.js');
+
+const TodosService = require('./services/todos.service.js');
+const TodosController = require('./controllers/todos.controller.js');
+const TodosRouter = require('./routers/todos.router.js');
+
 const config = require('./config/config.js');
-console.log(`api-server: loaded configuration:\n${JSON.stringify(config, null, 4)}`);
 
 /**
  * Instanitate an ExpressJS webserver.
@@ -45,11 +54,17 @@ Promise.all([
  */
 .then((initializedEntities) => {
     /**
-     * Import the components. Each component is an instance of an ExpressJS router.
-     * Here the application (general utility) component, and the ToDos component are loaded.
+     * Instantiate the services, controllers, and routers
+     * Here the Application (general utility) and the ToDos Routers, Controllers, and Services are loaded
      */
-    const applicationComponent = require('./components/application')(config);
-    const todosComponent = require('./components/todos')(config, initializedEntities[1]);
+    
+    const applicationService = new ApplicationService(config);
+    const applicationController = new ApplicationController(applicationService);
+    const applicationRouter = new ApplicationRouter(applicationController);
+
+    const todosService = new TodosService(config, initializedEntities[1]);
+    const todosController = new TodosController(todosService);
+    const todosRouter = new TodosRouter(todosController);
 
     /**
      * Bind all of the components to the express application.
@@ -58,8 +73,8 @@ Promise.all([
      * Bind the todos component with the /todos, so the todos component executes for each HTTP request that goes to /todos.
      */
 
-    app.use(applicationComponent);
-    app.use('/todo', todosComponent);
+    app.use(applicationRouter);
+    app.use('/todo', todosRouter);
 
     /**
      * If the middleware above this hasn't sent back a response, then there was no matching endpoint. We send back an HTTP 404.
@@ -81,7 +96,7 @@ Promise.all([
 })
 .catch((reason) => {
     // Log the error to the console
-    console.error(`api-server: ${reason}`);
+    console.error(reason);
 
     // Exit the program
     process.exit(1);
