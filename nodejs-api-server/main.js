@@ -12,9 +12,9 @@ const ApplicationService = require('./services/application.service.js');
 const ApplicationController = require('./controllers/application.controller.js');
 const ApplicationRouter = require('./routers/application.router.js');
 
-const TodosService = require('./services/todos.service.js');
-const TodosController = require('./controllers/todos.controller.js');
-const TodosRouter = require('./routers/todos.router.js');
+const BooksService = require('./services/books.service.js');
+const BooksController = require('./controllers/books.controller.js');
+const BooksRouter = require('./routers/books.router.js');
 
 const config = require('./config/config.js');
 
@@ -62,19 +62,19 @@ Promise.all([
     const applicationController = new ApplicationController(applicationService);
     const applicationRouter = new ApplicationRouter(applicationController);
 
-    const todosService = new TodosService(config, initializedEntities[1]);
-    const todosController = new TodosController(todosService);
-    const todosRouter = new TodosRouter(todosController);
+    const booksService = new BooksService(config, initializedEntities[1]);
+    const booksController = new BooksController(booksService);
+    const booksRouter = new BooksRouter(booksController);
 
     /**
      * Bind all of the components to the express application.
      *
      * Bind the application component with no mountpoint, so the application component executes for each HTTP request.
-     * Bind the todos component with the /todos, so the todos component executes for each HTTP request that goes to /todos.
+     * Bind the books component with the /books, so the books component executes for each HTTP request that goes to /books.
      */
 
     app.use(applicationRouter);
-    app.use('/todo', todosRouter);
+    app.use('/book', booksRouter);
 
     /**
      * If the middleware above this hasn't sent back a response, then there was no matching endpoint. We send back an HTTP 404.
