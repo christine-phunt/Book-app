@@ -1,5 +1,5 @@
 /**
- * This is the todos service.
+ * This is the books service.
  * This guy is responsible for all of the business logic related to a To Do entity.
  *
  *
@@ -12,7 +12,7 @@ module.exports = function(config, database) {
     /**
      * Get all the ToDo records from the database
      */
-    let getTodos = () => {
+    let getBooks = () => {
         return database.findAll();
     };
 
@@ -21,7 +21,7 @@ module.exports = function(config, database) {
      *
      * @param title the name of the ToDo item
      */
-    let createTodo = (title) => {
+    let createBook = (title) => {
         return database.insert({ "title": title });
     };
 
@@ -29,15 +29,15 @@ module.exports = function(config, database) {
      * Update a ToDo record in the database
      *
      * @param key the key for the ToDo entity to update
-     * @param updatedTodo The updated record to put in the database
+     * @param updatedBook The updated record to put in the database
      */
-    let updateTodo = (key, updatedTodo) => {
-        return database.update(key, updatedTodo)
+    let updateBook = (key, updatedBook) => {
+        return database.update(key, updatedBook)
     };
 
     return {
-        createTodo: createTodo,
-        getTodos: getTodos,
-        updateTodo: updateTodo,
+        createBook: createBook,
+        getBooks: getBooks,
+        updateBook: updateBook,
     };
 };
