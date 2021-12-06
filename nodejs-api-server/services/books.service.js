@@ -19,10 +19,20 @@ module.exports = function(config, database) {
     /**
      * Create a ToDo record in the database
      *
-     * @param title the name of the ToDo item
+     * @param book the name of the ToDo item
      */
-    let createBook = (title) => {
-        return database.insert({ "title": title });
+    let createBook = (book) => {
+        return database.insert({
+            
+            "Title": book.title,
+            "Author": book.author,
+            "Country": book.country,
+            "Year": book.year,
+            "ISBN": book.isbn,
+            "Price": book.price
+
+        
+        });
     };
 
     /**
