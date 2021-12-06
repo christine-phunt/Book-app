@@ -1,11 +1,11 @@
 /**
- * This is the Todos router.
+ * This is the Books router.
  */
 
 const express = require('express');
 const bodyParser = require('body-parser');
 
-module.exports = function TodoRouter(todosController) {
+module.exports = function BookRouter(booksController) {
 
     const router = express.Router();
 
@@ -16,9 +16,9 @@ module.exports = function TodoRouter(todosController) {
      * Get all of the To Do objects
      */
     router.get('/', (req, res, next) => {
-        todosController.getTodos()
-            .then((todos) => {
-                res.status(200).send(todos);
+        booksController.getBooks()
+            .then((books) => {
+                res.status(200).send(books);
             })
             .catch(next)
     });
@@ -27,9 +27,9 @@ module.exports = function TodoRouter(todosController) {
      * Create a To Do object
      */
     router.post('/', (req, res, next) => {
-        todosController.createTodo(req.body.title)
-            .then((todo) => {
-                res.status(201).send(todo);
+        booksController.createBook(req.body.title)
+            .then((book) => {
+                res.status(201).send(book);
             })
             .catch(next)
     });
@@ -38,7 +38,7 @@ module.exports = function TodoRouter(todosController) {
      * Update a To Do object. This does PUT updates, not PATCH updates, so the whole entity is re-written, not select fields.
      */
     router.put('/:id', (req, res, next) => {
-        todosController.updateTodo(req.params.id, req.body)
+        booksController.updateBook(req.params.id, req.body)
             .then((updatedRecord) => {
                 res.status(200).send(updatedRecord);
             })
