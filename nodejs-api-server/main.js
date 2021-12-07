@@ -6,7 +6,7 @@ const os = require('os');
 
 const express = require('express');
 
-const databaseConnection = require('./databaseConnection.js');
+// const databaseConnection = require('./databaseConnection.js');
 
 const ApplicationService = require('./services/application.service.js');
 const ApplicationController = require('./controllers/application.controller.js');
@@ -17,6 +17,9 @@ const BooksController = require('./controllers/books.controller.js');
 const BooksRouter = require('./routers/books.router.js');
 
 const config = require('./config/config.js');
+const port = config.port;
+const sequelize = require('./util/database');
+
 
 /**
  * Instanitate an ExpressJS webserver.
@@ -47,7 +50,18 @@ Promise.all([
     /**
      * Replace the following with your MySQL/MongoDB/Redis/Whatever-db connection
      */
-    databaseConnection()
+    (async () =>{
+
+        try {
+          await sequelize.sync(
+            {force: false}
+          );
+          console.log("test");
+        } catch (error) {
+          console.error(error);
+        }
+      })()
+    
 ])
 /**
  * All initialized entities, such as the express app, and the  are passed through, such as the database
