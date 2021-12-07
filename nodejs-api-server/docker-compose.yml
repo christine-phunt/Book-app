@@ -1,12 +1,16 @@
 version: "3.7"
 services:
   postgres: 
-    image: postgres
+    image: postgres:latest
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: mysecretpassword
-      PGDATA: /data/postgres
-
+      POSTGRES_DB: postgres
+      PGDATA: /var/lib/postgresql/data/pg_data
+    volumes: 
+      - ./db/data:/var/lib/postgresql/data
+      - ./db/1_init.sql:/docker-entrypoint-initdb.d/1_init.sql
+      - ./db/2_init.sql:/docker-entrypoint-initdb.d/2_init.sql
     ports:
       - "5432:5432"
 
@@ -16,11 +20,13 @@ services:
     depends_on:
       - postgres
     environment:
-      DATABASE_URL: postgres://postgres:mysecretpassword@postgres:5433/Book
+      DATABASE_URL: postgres://postgres:mysecretpassword@postgres:5432/
       NODE_ENV: development
       PORT: 4000
     ports:
       - "4000:4000"
 
-        
+volumes: 
+  data: {}
+
     
