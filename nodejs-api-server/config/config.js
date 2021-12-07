@@ -8,16 +8,25 @@
  */
 
 /* Set a default NODE_ENV if one isn't set */
+require('dotenv').config({path: '.env'});
+
 let NODE_ENV = process.env.NODE_ENV || "development";
 
 const config = {
     "development": {
-        "port": 9000,
-        "x-powered-by": "nodejs-api-pattern"
+        "port": process.env.PORT,
+        "x-powered-by": "nodejs-api-pattern",
+        "db": {
+                host: process.env.DB_HOST,
+                name: process.env.DB_SCHEMA,
+                username: process.env.DB_USER,
+                password: process.env.DB_PASSWORD
+              }
     }
 };
 
-/**
+
+/***
  * Export out the configuration data only for the environemnt specified by NODE_ENV.
  */
 module.exports = config[NODE_ENV];
