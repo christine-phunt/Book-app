@@ -17,10 +17,10 @@ const config = {
         "port": process.env.PORT,
         "x-powered-by": "nodejs-api-pattern",
         "db": {
-                host: process.env.DB_HOST,
-                name: process.env.DB_SCHEMA,
-                username: process.env.DB_USER,
-                password: process.env.DB_PASSWORD
+                host: process.env.PGHOST,
+                name: process.env.PGDATABASE,
+                username: process.env.PGUSER,
+                password: process.env.PGPASSWORD
               }
     }
 };

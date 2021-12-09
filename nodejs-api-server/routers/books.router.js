@@ -27,17 +27,21 @@ module.exports = function BookRouter(booksController) {
      * Create a To Do object
      */
     router.post('/', (req, res, next) => {
-        booksController.createBook(req.body.title)
+        booksController.createBook(req.body)
             .then((book) => {
                 res.status(201).send(book);
             })
             .catch(next)
     });
+    /**
+     * Title, author, pages, 
+     */
+    
 
     /**
      * Update a To Do object. This does PUT updates, not PATCH updates, so the whole entity is re-written, not select fields.
      */
-    router.put('/:id', (req, res, next) => {
+    router.put('/book:id', (req, res, next) => {
         booksController.updateBook(req.params.id, req.body)
             .then((updatedRecord) => {
                 res.status(200).send(updatedRecord);

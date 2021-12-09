@@ -18,6 +18,8 @@ const BooksRouter = require('./routers/books.router.js');
 
 const config = require('./config/config.js');
 const port = config.port;
+const env = require('dotenv').config({path: '.env'});
+
 const sequelize = require('./util/database');
 
 
@@ -45,22 +47,28 @@ const listen = (expressApp, port) => {
  * Following that
  */
 Promise.all([
-    listen(app, config.port),
+    console.log('CONFIG', process.env.PORT), /*eaddrinuse ERROR when removed*/
 
     /**
      * Replace the following with your MySQL/MongoDB/Redis/Whatever-db connection
      */
-    (async () =>{
+    // connectToDatabase(),
+    sequelize.sync({force: false}),
+    sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+    console.log('Connection has been established successfully.');
+    console.log('Connection has been established successfully.');
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+    console.error('Unable to connect to the database:', err);
+    console.error('Unable to connect to the database:', err);
+  }),
 
-        try {
-          await sequelize.sync(
-            {force: false}
-          );
-          console.log("test");
-        } catch (error) {
-          console.error(error);
-        }
-      })()
+    listen(app, config.port)
     
 ])
 /**
@@ -76,6 +84,10 @@ Promise.all([
     const applicationController = new ApplicationController(applicationService);
     const applicationRouter = new ApplicationRouter(applicationController);
 
+    //    console.log('1111111111111111111111111',initializedEntities[1]);
+
+
+    
     const booksService = new BooksService(config, initializedEntities[1]);
     const booksController = new BooksController(booksService);
     const booksRouter = new BooksRouter(booksController);

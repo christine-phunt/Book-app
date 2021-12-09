@@ -1,5 +1,5 @@
 /**
- * This is the books service.
+ * This is the todos service.
  * This guy is responsible for all of the business logic related to a To Do entity.
  *
  *
@@ -7,32 +7,38 @@
  * @param database is a database representation
  */
 
-module.exports = function(config, database) {
+ const Book = require('../models/books');
+
+ module.exports = function(config, database) {
 
     /**
      * Get all the ToDo records from the database
      */
-    let getBooks = () => {
-        return database.findAll();
+    //  exports.getAll = async (req, res, next) => {
+
+    let getBooks = async () => {
+            const ALL = await Book.findAll();
+            return Promise.resolve(ALL);
     };
 
     /**
      * Create a ToDo record in the database
      *
-     * @param book the name of the ToDo item
+     * @param title the name of the ToDo item
      */
-    let createBook = (book) => {
-        return database.insert({
-            
-            "Title": book.title,
-            "Author": book.author,
-            "Country": book.country,
-            "Year": book.year,
-            "ISBN": book.isbn,
-            "Price": book.price
-
+    let createBook = async (book) => {
         
-        });
+        console.log(book);
+        const oneBook = await Book.create({  
+            title: book['Title'],
+            author: book['Author'],
+            country: book['Country'],
+            year: book['Year'],
+            iSBN: book['ISBN'],
+            price: book['Price']
+         });
+        return Promise.resolve(oneBook);
+
     };
 
     /**
