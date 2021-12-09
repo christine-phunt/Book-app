@@ -11,8 +11,10 @@ module.exports = function(booksModel) {
         return booksModel.getBooks();
     };
 
-    const createBook = (title) => {
-        return booksModel.createBook(title);
+    const createBook = (book) => {
+        
+
+        return booksModel.createBook(book);
     }
 
     const updateBook = (id, changes) => {
