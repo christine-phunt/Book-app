@@ -47,8 +47,24 @@
      * @param key the key for the ToDo entity to update
      * @param updatedBook The updated record to put in the database
      */
-    let updateBook = (key, updatedBook) => {
-        return database.update(key, updatedBook)
+    let updateBook = async (key, updatedBook) => {
+        
+        const oneBook = await Book.update
+        ({ 
+            title: updatedBook['Title'],
+            author: updatedBook['Author'],
+            country: updatedBook['Country'],
+            year: updatedBook['Year'],
+            iSBN: updatedBook['ISBN'],
+            price: updatedBook['Price']
+        }, {
+            where: {
+              id: key
+            }
+          });
+        
+       
+        return Promise.resolve(oneBook);
     };
 
     return {
