@@ -1,0 +1,4 @@
+node_modules/
+books-app/node_modules/
+books-app/npm-debug.log
+books-app/build/
